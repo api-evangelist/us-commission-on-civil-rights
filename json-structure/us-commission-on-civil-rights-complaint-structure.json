@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/us-commission-on-civil-rights/refs/heads/main/json-structure/us-commission-on-civil-rights-complaint-structure.json",
+  "name": "CivilRightsComplaint",
+  "description": "A civil rights complaint filed with a federal agency, as tracked by the US Commission on Civil Rights Data Inventory Program.",
+  "type": "object",
+  "properties": {
+    "complaint_id": {
+      "type": "string",
+      "description": "Unique identifier for the civil rights complaint."
+    },
+    "state": {
+      "type": "string",
+      "description": "US state where the complaint was filed.",
+      "example": "California"
+    },
+    "federal_agency": {
+      "type": "string",
+      "description": "Federal agency with which the complaint was filed.",
+      "example": "Equal Employment Opportunity Commission"
+    },
+    "subject": {
+      "type": "string",
+      "description": "Subject matter category of the complaint.",
+      "enum": [
+        "Race",
+        "Color",
+        "Religion",
+        "Sex",
+        "Age",
+        "Disability",
+        "National Origin",
+        "Electoral Process"
+      ]
+    },
+    "basis": {
+      "type": "string",
+      "description": "Legal basis or protected characteristic underlying the complaint."
+    },
+    "filing_date": {
+      "type": "date",
+      "description": "Date the complaint was filed."
+    },
+    "fiscal_year": {
+      "type": "int32",
+      "description": "Federal fiscal year in which the complaint was filed.",
+      "example": 2025
+    },
+    "status": {
+      "type": "string",
+      "description": "Current status of the complaint.",
+      "enum": [
+        "Open",
+        "Closed",
+        "Pending",
+        "Resolved",
+        "Dismissed"
+      ]
+    },
+    "resolution": {
+      "type": "string",
+      "description": "How the complaint was resolved.",
+      "enum": [
+        "Settlement",
+        "Withdrawal",
+        "Administrative Closure",
+        "No Cause Finding",
+        "Cause Finding",
+        "Pending"
+      ]
+    },
+    "complainant_type": {
+      "type": "string",
+      "description": "Type of entity filing the complaint.",
+      "enum": [
+        "Individual",
+        "Organization",
+        "Group"
+      ]
+    }
+  },
+  "required": [
+    "complaint_id",
+    "state",
+    "federal_agency",
+    "subject",
+    "filing_date"
+  ]
+}

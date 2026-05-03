@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/us-commission-on-civil-rights/refs/heads/main/json-schema/us-commission-on-civil-rights-report-schema.json",
+  "title": "CivilRightsReport",
+  "description": "A report published by the US Commission on Civil Rights, including briefing reports, advisory committee reports, and statutory enforcement reports.",
+  "type": "object",
+  "properties": {
+    "report_id": {
+      "type": "string",
+      "description": "Unique identifier for the report."
+    },
+    "title": {
+      "type": "string",
+      "description": "Full title of the report.",
+      "example": "A Targeted Response: Federal Enforcement of the Americans with Disabilities Act"
+    },
+    "report_type": {
+      "type": "string",
+      "description": "Category of the report.",
+      "enum": [
+        "Briefing Report",
+        "Advisory Committee Report",
+        "Statutory Enforcement Report",
+        "Staff Report",
+        "Public Service Announcement",
+        "Congressional Report"
+      ]
+    },
+    "publication_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the report was published."
+    },
+    "topics": {
+      "type": "array",
+      "description": "Civil rights topic areas covered in the report.",
+      "items": {
+        "type": "string"
+      },
+      "example": ["Disability", "Employment", "ADA Enforcement"]
+    },
+    "states_covered": {
+      "type": "array",
+      "description": "US states covered in the report, if applicable.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "advisory_committee": {
+      "type": "string",
+      "description": "Name of the state advisory committee that produced the report, if applicable."
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the full report on the Commission website."
+    },
+    "pdf_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Direct URL to the PDF version of the report."
+    },
+    "summary": {
+      "type": "string",
+      "description": "Brief summary or abstract of the report findings."
+    },
+    "recommendations_count": {
+      "type": "integer",
+      "description": "Number of formal recommendations included in the report."
+    }
+  },
+  "required": ["report_id", "title", "report_type", "publication_date"]
+}

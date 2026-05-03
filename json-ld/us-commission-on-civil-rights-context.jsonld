@@ -1,0 +1,119 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "usccr": "https://www.usccr.gov/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "CivilRightsComplaint": "usccr:CivilRightsComplaint",
+    "CivilRightsReport": "usccr:CivilRightsReport",
+    "NoFearActStatistic": "usccr:NoFearActStatistic",
+    "advisory_committee": {
+      "@id": "usccr:advisory_committee",
+      "@type": "xsd:string"
+    },
+    "basis": {
+      "@id": "usccr:basis",
+      "@type": "xsd:string"
+    },
+    "complainant_type": {
+      "@id": "usccr:complainant_type",
+      "@type": "xsd:string"
+    },
+    "complaint_id": {
+      "@id": "usccr:complaint_id",
+      "@type": "xsd:string"
+    },
+    "complaints_filed": {
+      "@id": "usccr:complaints_filed",
+      "@type": "xsd:integer"
+    },
+    "complaints_pending": {
+      "@id": "usccr:complaints_pending",
+      "@type": "xsd:integer"
+    },
+    "complaints_resolved": {
+      "@id": "usccr:complaints_resolved",
+      "@type": "xsd:integer"
+    },
+    "federal_agency": {
+      "@id": "usccr:federal_agency",
+      "@type": "xsd:string"
+    },
+    "filing_date": {
+      "@id": "usccr:filing_date",
+      "@type": "xsd:date"
+    },
+    "findings_of_discrimination": {
+      "@id": "usccr:findings_of_discrimination",
+      "@type": "xsd:integer"
+    },
+    "fiscal_year": {
+      "@id": "usccr:fiscal_year",
+      "@type": "xsd:integer"
+    },
+    "monetary_benefits": {
+      "@id": "usccr:monetary_benefits",
+      "@type": "xsd:decimal"
+    },
+    "pdf_url": {
+      "@id": "usccr:pdf_url",
+      "@type": "@id"
+    },
+    "publication_date": {
+      "@id": "usccr:publication_date",
+      "@type": "xsd:date"
+    },
+    "quarter": {
+      "@id": "usccr:quarter",
+      "@type": "xsd:integer"
+    },
+    "recommendations_count": {
+      "@id": "usccr:recommendations_count",
+      "@type": "xsd:integer"
+    },
+    "report_id": {
+      "@id": "usccr:report_id",
+      "@type": "xsd:string"
+    },
+    "report_type": {
+      "@id": "usccr:report_type",
+      "@type": "xsd:string"
+    },
+    "resolution": {
+      "@id": "usccr:resolution",
+      "@type": "xsd:string"
+    },
+    "state": {
+      "@id": "usccr:state",
+      "@type": "xsd:string"
+    },
+    "states_covered": {
+      "@id": "usccr:states_covered",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "usccr:status",
+      "@type": "xsd:string"
+    },
+    "subject": {
+      "@id": "usccr:subject",
+      "@type": "xsd:string"
+    },
+    "summary": {
+      "@id": "usccr:summary",
+      "@type": "xsd:string"
+    },
+    "title": {
+      "@id": "usccr:title",
+      "@type": "xsd:string"
+    },
+    "topics": {
+      "@id": "usccr:topics",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "url": "schema:url"
+  }
+}

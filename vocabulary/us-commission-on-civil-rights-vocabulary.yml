@@ -1,0 +1,157 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: US Commission on Civil Rights
+  description: >-
+    Vocabulary taxonomy for the US Commission on Civil Rights covering civil rights
+    complaint data, reports, federal enforcement statistics, and data resources.
+  created: "2026-05-03"
+  modified: "2026-05-03"
+
+operational:
+  apis:
+    - name: Civil Rights Complaints Data
+      namespace: civil-rights-complaints
+      baseUrl: https://www.usccr.gov/reports/civil-rights-complaints
+      status: active
+    - name: Data Inventory Program
+      namespace: data-inventory
+      baseUrl: https://www.usccr.gov/reports/data-inventory-program
+      status: active
+    - name: No FEAR Act Statistics
+      namespace: no-fear-act
+      baseUrl: https://www.usccr.gov/reports/no-fear-act
+      status: active
+
+  resources:
+    - name: complaints
+      description: Civil rights complaints filed with federal agencies
+      apis: [civil-rights-complaints]
+      actions: [list, filter, aggregate]
+    - name: reports
+      description: Commission reports, briefings, and publications
+      apis: [civil-rights-complaints]
+      actions: [list, get, search]
+    - name: no-fear-statistics
+      description: Federal employee discrimination complaint statistics
+      apis: [no-fear-act]
+      actions: [list, aggregate]
+
+  actions:
+    - name: list
+      description: Retrieve a collection of records
+      pattern: read
+    - name: get
+      description: Retrieve a single record by identifier
+      pattern: read
+    - name: search
+      description: Search across records using filters
+      pattern: query
+    - name: filter
+      description: Filter records by geographic or subject criteria
+      pattern: query
+    - name: aggregate
+      description: Aggregate statistics across complaint or report records
+      pattern: query
+
+  schemas:
+    core:
+      - name: CivilRightsComplaint
+        description: A civil rights complaint filed with a federal agency
+        key_properties: [complaint_id, state, federal_agency, subject, filing_date, status]
+      - name: CivilRightsReport
+        description: A Commission report or publication
+        key_properties: [report_id, title, report_type, publication_date, topics]
+      - name: NoFearActStatistic
+        description: No FEAR Act complaint statistic for a reporting period
+        key_properties: [fiscal_year, basis, complaints_filed, complaints_resolved]
+
+  parameters:
+    identifiers:
+      - name: complaint_id
+        description: Unique complaint identifier
+      - name: report_id
+        description: Unique report identifier
+    filters:
+      - name: state
+        description: US state filter for complaints and reports
+      - name: subject
+        description: Civil rights subject matter category
+      - name: fiscal_year
+        description: Federal fiscal year filter
+      - name: report_type
+        description: Report category filter
+    pagination:
+      - name: limit
+        description: Maximum number of records to return
+      - name: offset
+        description: Number of records to skip
+
+  enums:
+    discrimination_basis:
+      - Race
+      - Color
+      - Religion
+      - Sex
+      - Age
+      - Disability
+      - National Origin
+      - Electoral Process
+    complaint_status:
+      - Open
+      - Closed
+      - Pending
+      - Resolved
+      - Dismissed
+    report_type:
+      - Briefing Report
+      - Advisory Committee Report
+      - Statutory Enforcement Report
+      - Staff Report
+      - Congressional Report
+
+capability:
+  workflows: []
+  personas:
+    - id: policy-researcher
+      name: Policy Researcher
+      description: Researcher analyzing civil rights policy, enforcement trends, and complaint patterns
+      workflows: []
+    - id: federal-compliance-officer
+      name: Federal Compliance Officer
+      description: Federal agency official monitoring No FEAR Act compliance and discrimination complaint statistics
+      workflows: []
+    - id: civil-rights-advocate
+      name: Civil Rights Advocate
+      description: Advocate or attorney using Commission data to inform civil rights litigation and policy work
+      workflows: []
+
+  domains:
+    - name: Civil Rights Enforcement
+      description: Federal agency enforcement of civil rights statutes
+    - name: Complaint Data
+      description: Data about civil rights complaints filed with federal agencies
+    - name: No FEAR Act Compliance
+      description: Federal employee antidiscrimination and retaliation complaint statistics
+
+crossReference:
+  - resource: complaints
+    operations:
+      - list complaints by state
+      - filter by discrimination basis
+      - aggregate by federal agency
+    workflows: []
+    personas: [policy-researcher, civil-rights-advocate]
+  - resource: reports
+    operations:
+      - list published reports
+      - search by topic
+      - get by report type
+    workflows: []
+    personas: [policy-researcher, civil-rights-advocate, federal-compliance-officer]
+  - resource: no-fear-statistics
+    operations:
+      - list annual statistics
+      - aggregate by basis
+    workflows: []
+    personas: [federal-compliance-officer, policy-researcher]
