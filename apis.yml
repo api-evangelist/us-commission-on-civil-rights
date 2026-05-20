@@ -60,6 +60,8 @@ description: >-
   research, advisory committees in all 50 states, and public reporting to the
   President and Congress.
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/usccrgov
   - type: Website
     url: https://www.usccr.gov/
   - type: Documentation
