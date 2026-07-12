@@ -60,6 +60,10 @@ description: >-
   research, advisory committees in all 50 states, and public reporting to the
   President and Congress.
 common:
+  - type: VulnerabilityDisclosure
+    url: security/us-commission-on-civil-rights-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/us-commission-on-civil-rights-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/usccrgov
   - type: Website
