@@ -6,6 +6,9 @@ apis:
     name: US Commission on Civil Rights
     tags:
       - Civil Rights
+      - Federal-Government
+    tags_raw:
+      - Civil Rights
       - Federal Government
     humanURL: https://www.usccr.gov/
     properties:
@@ -41,6 +44,11 @@ apis:
       civil rights policy through research, advisory committees, and public reporting.
 name: US Commission on Civil Rights
 tags:
+  - Civil Rights
+  - Federal-Government
+  - Equal Protection
+  - Discrimination
+tags_raw:
   - Civil Rights
   - Federal Government
   - Equal Protection
